@@ -7,11 +7,11 @@ build-backend = "flit_core.buildapi"
 requires = ["flit_core >=3.8.0,<4"]
 
 [project]
-name = "super-repo"
-version = "0.5.0"
+name = "dfg-preserving-energy-data"
+version = "0.0.0"
 authors = [
     {name = "Ludwig Hülk", email = "datenzentrum@rl-institut.de"}]
-description = "A template repo for research software."
+description = "Securing and Preserving Energy Data from the Harvard Dataverse."
 readme = "README.rst"
 license = {file = "LICENSE.txt"}
 requires-python = ">=3.10"
@@ -28,9 +28,9 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/rl-institut/super-repo"
-Source = "https://github.com/rl-institut/super-repo"
-Documentation = "https://rl-institut.github.io/super-repo/latest/"
+Homepage = "https://github.com/rl-institut/dfg-preserving-energy-data"
+Source = "https://github.com/rl-institut/dfg-preserving-energy-data"
+Documentation = "https://rl-institut.github.io/dfg-preserving-energy-data/latest/"
 
 [tool.ruff]
 builtins = ["ellipsis"]
