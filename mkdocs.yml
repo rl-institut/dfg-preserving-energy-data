@@ -4,15 +4,15 @@
 # SPDX-License-Identifier: MIT
 
 # Project
-site_name: Super-Repo Documentation
-site_url: https://rl-institut.github.io/super-repo/
-site_description: Documentation of the Super-Repo for scientific software
+site_name: Securing and Preserving Energy Data Documentation
+site_url: https://rl-institut.github.io/dfg-preserving-energy-data/
+site_description: Documentation of the research project Securing and Preserving Energy Data
 
 # Repository
-repo_name: rl-institut/super-repo
-repo_url: https://github.com/rl-institut/super-repo
+repo_name: rl-institut/dfg-preserving-energy-data
+repo_url: https://github.com/rl-institut/dfg-preserving-energy-data
 docs_dir: docs
-copyright: super-repo documentation &copy; Reiner Lemoine Institut | CC-BY-4.0
+copyright: dfg-preserving-energy-data documentation &copy; Reiner Lemoine Institut | CC-BY-4.0
 
 # Configuration
 theme:
@@ -65,7 +65,7 @@ extra:
     provider: mike
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/rl-institut/super-repo
+      link: https://github.com/rl-institut/dfg-preserving-energy-data
     - icon: fontawesome/brands/mastodon
       link: https://mastodon.social/@RL_Institut@wisskomm.social
 
