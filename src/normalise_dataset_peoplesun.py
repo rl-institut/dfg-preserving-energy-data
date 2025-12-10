@@ -5,6 +5,14 @@ from split_xlsx_to_csvs import split_xlsx_to_csvs
 import pandas as pd
 
 
+def copy_csv_pandas(csv_path, output_path, sep=";"):
+    df = pd.read_csv(csv_path, low_memory = False)
+    df = df.replace(';', '.')
+    df.to_csv(output_path, encoding = 'utf-8', sep = ';', index = False)
+
+    return output_path
+
+
 if __name__ == '__main__':
 
     import json
@@ -21,6 +29,7 @@ if __name__ == '__main__':
     psn_hh_anon = f'{fn_data}/peoplesun_hh_anon.csv'
     psn_hhapps_anon = f'{fn_data}/peoplesun_hhapps_anon.csv'
     psn_hhstoves_anon = f'{fn_data}/peoplesun_hhstoves_anon.csv'
+    psn_enumarea_anon = f'{fn_data}/eaidgeokey_anon.csv'
 
     psn_ent_odk_choices = f'{fn_data}/peoplesun_ent_odk_choices.xlsx'
     psn_ent_odk_codebook = f'{fn_data}/peoplesun_ent_odk_codebook.xlsx'
@@ -45,19 +54,19 @@ if __name__ == '__main__':
 
     # Additional Data
     psn_entapps_anon_new = f'{fn_data}/result/peoplesun_enterprise_key_appliances.csv'
-    copy(psn_entapps_anon, psn_entapps_anon_new)
+    copy_csv_pandas(psn_entapps_anon, psn_entapps_anon_new)
 
     psn_entequips_anon_new = f'{fn_data}/result/peoplesun_enterprise_key_equipments.csv'
-    copy(psn_entequips_anon, psn_entequips_anon_new)
+    copy_csv_pandas(psn_entequips_anon, psn_entequips_anon_new)
 
     psn_entstoves_anon_new = f'{fn_data}/result/peoplesun_enterprise_key_stoves.csv'
-    copy(psn_entstoves_anon, psn_entstoves_anon_new)
+    copy_csv_pandas(psn_entstoves_anon, psn_entstoves_anon_new)
 
     psn_hhapps_anon_new = f'{fn_data}/result/peoplesun_household_key_appliances.csv'
-    copy(psn_hhapps_anon, psn_hhapps_anon_new)
+    copy_csv_pandas(psn_hhapps_anon, psn_hhapps_anon_new)
 
     psn_hhstoves_anon_new = f'{fn_data}/result/peoplesun_household_key_stoves.csv'
-    copy(psn_hhstoves_anon, psn_hhstoves_anon_new)
+    copy_csv_pandas(psn_hhstoves_anon, psn_hhstoves_anon_new)
     print("Copy and Rename: Additional Data")
 
     # Keys and Codes
@@ -84,6 +93,10 @@ if __name__ == '__main__':
     os.remove(psn_hh_odk_codebook_csv)
     print("Delete CSV")
 
+    # Geodata
+    psn_enumarea_anon_new = f'{fn_data}/result/peoplesun_key_enumeration_area.csv'
+    copy_csv_pandas(psn_enumarea_anon, psn_enumarea_anon_new)
+    print("Copy and Rename: Enumeration Area")
 
     # Normalise Data
 
